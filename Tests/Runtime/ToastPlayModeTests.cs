@@ -111,6 +111,37 @@ namespace KidzDev.Unity.Toast.Tests
         });
 
         [UnityTest]
+        public IEnumerator Burst_FiveShowsAgainstCapacityThree_SettlesAtCap() => UniTask.ToCoroutine(async () =>
+        {
+            var layer = new TestToastLayer();
+            var manager = new ToastManager(
+                layer: layer,
+                transition: new SlideFadeToastTransition(duration: 0.05f),
+                viewFactory: () => FakeToastView.Create(),
+                maxVisible: 3);
+            try
+            {
+                for (int i = 0; i < 5; i++) manager.Show($"burst {i}");
+
+                // A synchronous burst evicts down to the cap immediately, but an evicted entry stays counted
+                // until its exit transition finishes (removal happens in RunAsync's finally, which only runs
+                // once the awaited transition completes) — so right after the burst the raw count is still
+                // 5 (2 evicted-but-exiting + 3 live), not yet 3.
+                Assert.AreEqual(5, manager.ActiveCount, "evicted entries still counted until their exit transition finishes");
+
+                float elapsed = 0f;
+                while (manager.ActiveCount > 3 && elapsed < 2f)
+                {
+                    await UniTask.NextFrame();
+                    elapsed += Time.unscaledDeltaTime;
+                }
+
+                Assert.AreEqual(3, manager.ActiveCount, "settles at the cap once evicted toasts finish exiting");
+            }
+            finally { manager.Dispose(); layer.Teardown(); }
+        });
+
+        [UnityTest]
         public IEnumerator TapToDismiss_ClickAtToastCenter_DismissesTheToast() => UniTask.ToCoroutine(async () =>
         {
             var esGo = new GameObject("EventSystem", typeof(EventSystem));
