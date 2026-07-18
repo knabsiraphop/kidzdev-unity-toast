@@ -1,0 +1,19 @@
+{
+  "name": "KidzDev.Unity.Toast.TestSupport",
+  "rootNamespace": "KidzDev.Unity.Toast.Tests",
+  "references": [
+    "KidzDev.Unity.Toast",
+    "UniTask"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

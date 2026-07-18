@@ -1,0 +1,21 @@
+{
+  "name": "com.kidzdev.unity.toast",
+  "version": "0.1.0",
+  "displayName": "KidzDev Unity Toast",
+  "description": "Non-blocking, auto-dismissing notification banners (snackbars) for Unity uGUI. Fire-and-forget Show(), capped stack with newest-evicts-oldest admission, slide+fade transition, no DOTween, no Addressables dependency.",
+  "unity": "6000.0",
+  "author": {
+    "name": "KidzDev"
+  },
+  "dependencies": {
+    "com.cysharp.unitask": "2.5.11",
+    "com.unity.ugui": "2.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Demo",
+      "description": "Buttons for a default toast, a short toast, an icon+color toast, a burst of 5 (visibly evicts against a cap of 3), a sticky \"Connection lost\" toast dismissed via its handle, and a second top-anchored manager.",
+      "path": "Samples~/Demo"
+    }
+  ]
+}

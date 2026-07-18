@@ -1,0 +1,18 @@
+{
+  "name": "KidzDev.Unity.Toast",
+  "rootNamespace": "KidzDev.Unity.Toast",
+  "references": [
+    "UniTask",
+    "UnityEngine.UI",
+    "Unity.TextMeshPro"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

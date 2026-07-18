@@ -1,0 +1,10 @@
+{
+  "name": "KidzDev.Unity.Toast.Demo",
+  "rootNamespace": "KidzDev.Unity.Toast.Demo",
+  "references": [
+    "KidzDev.Unity.Toast",
+    "UniTask",
+    "Unity.TextMeshPro"
+  ],
+  "autoReferenced": false
+}
