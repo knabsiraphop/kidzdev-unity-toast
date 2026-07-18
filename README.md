@@ -30,7 +30,7 @@ Add to `Packages/manifest.json` (UniTask comes from the OpenUPM scoped registry)
     { "name": "OpenUPM", "url": "https://package.openupm.com", "scopes": ["com.cysharp.unitask"] }
   ],
   "dependencies": {
-    "com.kidzdev.unity.toast": "https://github.com/knabsiraphop/kidzdev-unity-toast.git#v0.1.0"
+    "com.kidzdev.unity.toast": "https://github.com/knabsiraphop/kidzdev-unity-toast.git#v0.1.1"
   }
 }
 ```

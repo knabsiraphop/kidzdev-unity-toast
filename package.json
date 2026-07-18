@@ -1,6 +1,6 @@
 {
   "name": "com.kidzdev.unity.toast",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "KidzDev Unity Toast",
   "description": "Non-blocking, auto-dismissing notification banners (snackbars) for Unity uGUI. Fire-and-forget Show(), capped stack with newest-evicts-oldest admission, slide+fade transition, no DOTween, no Addressables dependency.",
   "unity": "6000.0",
